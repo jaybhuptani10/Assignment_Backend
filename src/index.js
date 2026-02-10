@@ -13,9 +13,11 @@ const startServer = async () => {
     const httpServer = createServer(app);
     const io = new Server(httpServer, {
       cors: {
-        origin: ["http://localhost:5173", process.env.CORS_ORIGIN].filter(
-          Boolean,
-        ),
+        origin: [
+          "http://localhost:5173",
+          "https://assignment-frontend-omega-flame.vercel.app", // Your deployed frontend
+          process.env.CORS_ORIGIN,
+        ].filter(Boolean),
         credentials: true,
         methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
       },

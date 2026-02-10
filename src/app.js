@@ -5,8 +5,9 @@ import cors from "cors";
 const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
-  process.env.CORS_ORIGIN, // e.g. https://your-app.vercel.app
-].filter(Boolean); // Filter out undefined if env var not set
+  "https://assignment-frontend-omega-flame.vercel.app", // Your deployed frontend
+  process.env.CORS_ORIGIN,
+].filter(Boolean);
 
 const corsOptions = {
   origin: function (origin, callback) {
