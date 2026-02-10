@@ -1,4 +1,11 @@
 import "dotenv/config"; // Load env vars before anything else
+console.log("DEBUG: Current Working Directory:", process.cwd());
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+console.log("DEBUG: __dirname:", __dirname);
+
 import connectDB from "./db/index.js";
 import app from "./app.js";
 import { createServer } from "http";
